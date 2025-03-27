@@ -11,7 +11,7 @@ export class Member extends Document {
   email: string;
 
   @Prop({ required: true })
-  startDate: string;
+  startdate: string;
 
   @Prop({ default: true })
   active: boolean;

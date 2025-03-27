@@ -22,24 +22,24 @@ let MemberService = class MemberService {
     constructor(memberModel) {
         this.memberModel = memberModel;
     }
-    async registerMember(name, email, startDate) {
-        const newMember = new this.memberModel({ name, email, startDate });
+    async registerMember(name, email, startdate) {
+        const newMember = new this.memberModel({ name, email, startdate });
         return newMember.save();
     }
     async getMemberByEmail(email) {
-        return this.memberModel.findOne({ email }).exec();
+        return await this.memberModel.findOne({ email }).exec();
     }
     async getAllActiveMembers() {
-        return this.memberModel.find({ active: true }).select('name email').exec();
+        return await this.memberModel.find({ active: true }).select('name email').exec();
     }
     async cancelMembership(email) {
-        return this.memberModel
+        return await this.memberModel
             .findOneAndUpdate({ email }, { active: false }, { new: true })
             .exec();
     }
-    async modifyStartDate(email, newStartDate) {
-        return this.memberModel
-            .findOneAndUpdate({ email }, { startDate: newStartDate }, { new: true })
+    async modifyStartDate(email, newstartdate) {
+        return await this.memberModel
+            .findOneAndUpdate({ email }, { startdate: newstartdate }, { new: true })
             .exec();
     }
 };

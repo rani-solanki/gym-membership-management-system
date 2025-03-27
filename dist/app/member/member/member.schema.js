@@ -15,7 +15,7 @@ const mongoose_2 = require("mongoose");
 let Member = class Member extends mongoose_2.Document {
     name;
     email;
-    startDate;
+    startdate;
     active;
 };
 exports.Member = Member;
@@ -30,7 +30,7 @@ __decorate([
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
-], Member.prototype, "startDate", void 0);
+], Member.prototype, "startdate", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ default: true }),
     __metadata("design:type", Boolean)

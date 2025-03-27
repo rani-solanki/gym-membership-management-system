@@ -2,7 +2,7 @@ import { Document } from 'mongoose';
 export declare class Member extends Document {
     name: string;
     email: string;
-    startDate: string;
+    startdate: string;
     active: boolean;
 }
 export declare const MemberSchema: import("mongoose").Schema<Member, import("mongoose").Model<Member, any, any, any, Document<unknown, any, Member> & Member & Required<{
